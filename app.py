@@ -5,6 +5,21 @@ from model import predict
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
 
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://github.com/alchemistjp/ai_app_t1/dx01.jpg");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+
+
 st.sidebar.title("報告版_AI搭載アプリ(画像分類）")
 st.sidebar.write("CIFAR-10データを学習し10分類に分けたCNNモデルを使って、画像の要素割合をグラフ表示するアプリ")
 
