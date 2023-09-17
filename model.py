@@ -1,4 +1,3 @@
-# 以下を「model.py」に書き込み
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -50,7 +49,7 @@ def predict(img):
     net.eval()
     y = net(x)
 
-    # 結果を返す
-    y_prob = torch.nn.functional.softmax(torch.squeeze(y))  # 確率で表す
-    sorted_prob, sorted_indices = torch.sort(y_prob, descending=True)  # 降順にソート
+    # result
+    y_prob = torch.nn.functional.softmax(torch.squeeze(y))  # 割合で表す
+    sorted_prob, sorted_indices = torch.sort(y_prob, descending=True)  # ソート
     return [(classes_ja[idx], classes_en[idx], prob.item()) for idx, prob in zip(sorted_indices, sorted_prob)]
